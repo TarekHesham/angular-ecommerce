@@ -1,0 +1,6 @@
+<app-search-bar (userEmail)="receiveUserEmail($event)"></app-search-bar>
+<div class="container d-flex flex-wrap justify-content-center gap-4 my-5">
+  @for(userData of usersList ; track userData.id){
+  <app-user-card [user]="userData"></app-user-card>
+  }
+</div>
