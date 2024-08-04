@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "usersApp": {
+    "ecommerceApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "usersApp:build:production"
+              "buildTarget": "ecommerceApp:build:production"
             },
             "development": {
-              "buildTarget": "usersApp:build:development"
+              "buildTarget": "ecommerceApp:build:development"
             }
           },
           "defaultConfiguration": "development"
