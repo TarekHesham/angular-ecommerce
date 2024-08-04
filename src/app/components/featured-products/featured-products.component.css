@@ -1,0 +1,39 @@
+.active {
+  display: flex;
+}
+
+.card {
+  width: 13rem;
+  color: var(--text-prymary);
+  transition: all 0.3s 0s ease-in-out;
+}
+.card h6 {
+  color: var(--bg-color-button);
+}
+.card img {
+  height: 200px;
+  background-color: var(--bg-color-white-off);
+}
+
+.card:hover {
+  scale: 1.03;
+  background-color: var(--text-prymary);
+  color: var(--bg-color-white-off);
+  h6 {
+    color: var(--bg-color-white-off);
+  }
+}
+.carousel-indicators {
+  bottom: -20% !important;
+}
+.carousel-inner {
+  overflow: visible;
+}
+section {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}

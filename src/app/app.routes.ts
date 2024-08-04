@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 // pages
 // components
@@ -12,6 +13,11 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home Page',
+    title: 'TarekBaba | Home Page',
+  },
+  {
+    path: 'product-details/:id',
+    component: ProductDetailsComponent,
+    title: 'TarekBaba | Product Details',
   },
 ];

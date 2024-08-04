@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
 import products from '../../../../public/data/products.json';
+import { FeaturedProductsComponent } from '../../components/featured-products/featured-products.component';
+import { Product } from '../../types/product';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent],
+  imports: [HeroComponent, FeaturedProductsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  productsHero: object[] = products.splice(0, 3);
+  productsHero: any[] = products.splice(0, 3);
+  productsFeatured: any[] = products.splice(4, 16);
 }
