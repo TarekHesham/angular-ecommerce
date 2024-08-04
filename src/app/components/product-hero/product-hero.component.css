@@ -1,0 +1,12 @@
+.active-link {
+  color: #fb2e86 !important;
+}
+h1 {
+  color: var(--text-prymary);
+  font-size: 8vh;
+}
+section {
+  background-color: var(--bg-color-first);
+  color: var(--text-dark);
+  padding: 8vh;
+}

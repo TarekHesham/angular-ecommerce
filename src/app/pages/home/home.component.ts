@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
 import products from '../../../../public/data/products.json';
 import { FeaturedProductsComponent } from '../../components/featured-products/featured-products.component';
-import { Product } from '../../types/product';
 
 @Component({
   selector: 'app-home',
