@@ -1,4 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: #1d1d1d;
+  color: white;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --bg-color-first: #eeeffb;
+  --bg-color-scound: #7e33e0;
+  --bg-color-button: #fb2e86;
+  --text-color-sub: #8a8fb9;
+  --text-gray: #151875;
+  --text-dark: #1d1d1d;
 }

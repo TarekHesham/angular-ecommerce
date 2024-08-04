@@ -1,0 +1,23 @@
+section {
+  background-color: var(--bg-color-first);
+  color: var(--text-gray);
+}
+h2 {
+  color: var(--text-dark);
+  font-size: 45px;
+  font-weight: bold;
+  max-inline-size: 65%;
+}
+span {
+  color: var(--bg-color-button) !important;
+}
+.btn {
+  background-color: var(--bg-color-button);
+  color: white !important;
+}
+.active {
+  text-align: -webkit-center;
+}
+.gallery {
+  width: 85%;
+}

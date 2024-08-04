@@ -1,0 +1,8 @@
+nav {
+  background-color: white !important;
+  color: #0d0e43;
+  font-weight: bold !important;
+}
+.active {
+  color: #fb2e86 !important;
+}
