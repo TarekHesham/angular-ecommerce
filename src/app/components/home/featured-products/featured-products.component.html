@@ -1,0 +1,87 @@
+<section class="text-center my-5 mx-auto container">
+  <h2>Featured Products</h2>
+  <section class="d-flex justify-content-center">
+    <div id="carouselFeatured" class="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselFeatured" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselFeatured" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselFeatured" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item justify-content-between active gap-4">
+          @for(product of getFeaturedProducts.slice(0, 4); track product.id) {
+          <div class="card">
+            <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
+            <div class="card-options">
+              <ul class="list-inline link-offset-1-hover icons">
+                <li class="first"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a></li>
+              </ul>
+              <a class="btn rounded-1 btn-success"
+                [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
+                Details</a>
+            </div>
+            <div class="card-body">
+              <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
+                <h6>{{product.title}}</h6>
+              </a>
+              <hr>
+              <p class="card-text">${{product.price}}</p>
+            </div>
+          </div>
+          }
+        </div>
+        <div class="carousel-item justify-content-between gap-4">
+          @for(product of getFeaturedProducts.slice(4, 8); track product.id) {
+          <div class="card">
+            <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
+            <div class="card-options">
+              <ul class="list-inline link-offset-1-hover icons">
+                <li class="first"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a></li>
+              </ul>
+              <a class="btn rounded-1 btn-success"
+                [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
+                Details</a>
+            </div>
+            <div class="card-body">
+              <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
+                <h6>{{product.title}}</h6>
+              </a>
+              <hr>
+              <p class="card-text">${{product.price}}</p>
+            </div>
+          </div>
+          }
+        </div>
+        <div class="carousel-item justify-content-between gap-4">
+          @for(product of getFeaturedProducts.slice(8, 12); track product.id) {
+          <div class="card">
+            <img [src]="product.images[0]" class="card-img-top" [alt]="product.title.toLowerCase()">
+            <div class="card-options">
+              <ul class="list-inline link-offset-1-hover icons">
+                <li class="first"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a></li>
+              </ul>
+              <a class="btn rounded-1 btn-success"
+                [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
+                Details</a>
+            </div>
+            <div class="card-body">
+              <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
+                <h6>{{product.title}}</h6>
+              </a>
+              <hr>
+              <p class="card-text">${{product.price}}</p>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

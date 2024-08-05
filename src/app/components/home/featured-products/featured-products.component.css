@@ -1,0 +1,76 @@
+.active {
+  display: flex;
+}
+
+.card {
+  max-width: 13rem;
+  color: var(--text-prymary);
+  transition: all 0.3s 0s ease-in-out;
+  position: relative;
+}
+.card h6 {
+  color: var(--bg-color-button);
+}
+.card img {
+  height: 200px;
+  background-color: var(--bg-color-white-off);
+}
+.card:hover {
+  scale: 1.03;
+  background-color: var(--text-prymary);
+  color: var(--bg-color-white-off);
+
+  h6 {
+    color: var(--bg-color-white-off);
+  }
+  .card-options {
+    display: flex !important;
+  }
+  img {
+    filter: brightness(0.6);
+  }
+}
+.carousel-indicators {
+  bottom: -20% !important;
+}
+.carousel-inner {
+  overflow: visible;
+}
+section {
+  padding-bottom: 5%;
+  padding-top: 5%;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+.icons {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.icons i {
+  color: var(--text-prymary);
+  background-color: #efefef !important;
+  padding: 5px;
+  border-radius: 50%;
+}
+.icons .first i {
+  color: var(--bg-color-scound) !important;
+}
+.card-options {
+  position: absolute;
+  width: 102%;
+  height: 66%;
+  top: -1px;
+  left: -1px;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  display: none;
+}

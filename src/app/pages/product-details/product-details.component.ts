@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import products from '../../../../public/data/products.json';
 import { ActivatedRoute } from '@angular/router';
-import { ProductHeroComponent } from '../../components/product-hero/product-hero.component';
-import { ProductContentComponent } from '../../components/product-content/product-content.component';
-import { RelatedProductsComponent } from '../../components/related-products/related-products.component';
-import { ProductShopingCartComponent } from '../../components/product-shoping-chart/product-shoping-cart.component';
+import { ProductHeroComponent } from '../../components/product/product-hero/product-hero.component';
+import { ProductContentComponent } from '../../components/product/product-content/product-content.component';
+import { RelatedProductsComponent } from '../../components/product/related-products/related-products.component';
+import { ProductShopingCartComponent } from '../../components/product/product-shoping-chart/product-shoping-cart.component';
 
 @Component({
   selector: 'app-product-details',
@@ -25,6 +25,5 @@ export class ProductDetailsComponent {
   ngOnInit() {
     const { id } = this.activatedRoute.snapshot.params;
     this.productDetails = products.find((item) => item.id === +id);
-    console.log(this.productDetails);
   }
 }

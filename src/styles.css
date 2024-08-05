@@ -13,8 +13,10 @@ body {
   --bg-color-first: #eeeffb;
   --bg-color-scound: #7e33e0;
   --bg-color-button: #fb2e86;
+  --bg-color-sucsess-button: #28b75f;
   --bg-color-white-off: #f7f7f7;
   --text-color-sub: #8a8fb9;
   --text-prymary: #151875;
   --text-dark: #1d1d1d;
+  --text-prymary-dark: #0d134e;
 }

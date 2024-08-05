@@ -1,0 +1,25 @@
+<section class="d-flex">
+  <div id="carouselHero" class="carousel carousel-dark w-100">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      @for(product of getProducts; track product.id) {
+      <div class="carousel-item {{$index == 0 ? 'active' : ''}}">
+        <div class="d-flex align-items-center gallery">
+          <div class="d-none d-md-flex flex-column align-items-start text-start">
+            <h2>{{product.title}}</h2>
+            <p>{{product.description}}</p>
+            <a class="btn rounded-1" [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">Shop
+              Now</a>
+          </div>
+          <img [src]="product.thumbnail" class="float-end" [alt]="product.title" width="400px">
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

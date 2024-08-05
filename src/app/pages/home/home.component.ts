@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HeroComponent } from '../../components/hero/hero.component';
+import { HeroComponent } from '../../components/home/hero/hero.component';
 import products from '../../../../public/data/products.json';
-import { FeaturedProductsComponent } from '../../components/featured-products/featured-products.component';
+import { FeaturedProductsComponent } from '../../components/home/featured-products/featured-products.component';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,7 @@ import { FeaturedProductsComponent } from '../../components/featured-products/fe
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  productsHero: any[] = products.splice(0, 3);
-  productsFeatured: any[] = products.splice(4, 16);
+  productsRandom: any[] = products.sort(() => Math.random() - 0.5);
+  productsHero: any[] = this.productsRandom.slice(0, 3);
+  productsFeatured: any[] = this.productsRandom.slice(4, 16);
 }

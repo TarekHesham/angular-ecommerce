@@ -16,7 +16,7 @@ export const routes: Routes = [
     title: 'TarekBaba | Home Page',
   },
   {
-    path: 'product-details/:id',
+    path: 'product-details/:id/:title',
     component: ProductDetailsComponent,
     title: 'TarekBaba | Product Details',
   },

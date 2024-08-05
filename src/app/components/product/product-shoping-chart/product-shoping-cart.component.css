@@ -1,0 +1,60 @@
+.checked {
+  color: gold;
+}
+.card-title {
+  font-size: 2rem;
+  color: var(--text-prymary-dark);
+}
+.card-description {
+  color: var(--text-dark);
+}
+.shoping-chart {
+  margin-block: 8rem !important;
+  color: var(--text-prymary);
+}
+@media screen and (orientation: portrait) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+s {
+  color: var(--bg-color-button);
+}
+
+.addCart {
+  background-color: var(--bg-color-scound);
+  color: white !important;
+  transition: all 0.3s 0s ease-in-out;
+}
+.addCart:hover {
+  background-color: var(--bg-color-button);
+  scale: 1.03;
+
+  i::before {
+    font-weight: 900;
+  }
+}
+.addCart:active {
+  background-color: var(--bg-color-sucsess-button);
+  scale: 1;
+
+  i::before {
+    content: "\f07a";
+  }
+}
+
+.gallery img:hover,
+.gallery:not(:has(img:hover)) img:first-child {
+  /* scale: 0.38; */
+  position: absolute;
+  left: 15%;
+
+  max-width: 373px;
+  max-height: 373px;
+}
+
+.showHover {
+  display: block;
+  width: 300px;
+  height: 300px;
+}

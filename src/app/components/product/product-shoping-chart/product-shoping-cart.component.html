@@ -1,0 +1,30 @@
+<div class="card mx-auto w-75 shoping-chart">
+  <div class="d-flex flex-column flex-md-row g-0 h-100">
+    <div class="align-self-center d-flex flex-row align-items-center w-100">
+      <div class="d-none gallery d-md-flex flex-column align-items-center justify-content-evenly gap-3 w-50">
+        @for (image of product.images; track $index) {
+        <img [src]="image" class="img-fluid rounded-start" alt="{{product.title}}">
+        }
+      </div>
+      <img [src]="product.thumbnail" class="d-block d-md-none mx-auto" alt="{{product.title}}">
+    </div>
+    <div>
+      <div class="card-body m-5">
+        <h5 class="card-title">{{product.title}}</h5>
+        <!-- Stars -->
+        <p class="card-text"><small>@for(star of this.startArray(product.rating); track
+            product.rating) { <span class="fa fa-star checked"></span> } ({{product.rating}})</small></p>
+
+        <!-- Price -->
+        <span class="price">${{ product.price | priceAfterOffer: product.discountPercentage
+          }} | <s>${{product.price}}</s></span>
+
+        <!-- Description -->
+        <p class="card-description">{{product.description}}</p>
+
+        <a class="btn rounded-1 addCart" [routerLink]="['/cart', product.id]">Add To Cart <i
+            class="fa-regular fa-heart"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

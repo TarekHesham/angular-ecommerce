@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Product } from '../../types/product';
+import { Product } from '../../../types/product';
 
 @Component({
   selector: 'app-hero',
