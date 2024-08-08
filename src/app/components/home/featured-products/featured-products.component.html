@@ -12,6 +12,28 @@
         <div class="carousel-item justify-content-between active gap-4">
           @for(product of getFeaturedProducts.slice(0, 4); track product.id) {
           <div class="card">
+            <!-- Badge -->
+            @switch (product.availabilityStatus) {
+            @case ('In Stock') {
+            <span class="badge-status text-bg-success">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @case ('Low Stock') {
+            <span class="badge-status text-bg-warning">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @default {
+            <span class="badge-status text-bg-danger">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            }
+
             <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
             <div class="card-options">
               <ul class="list-inline link-offset-1-hover icons">
@@ -36,6 +58,27 @@
         <div class="carousel-item justify-content-between gap-4">
           @for(product of getFeaturedProducts.slice(4, 8); track product.id) {
           <div class="card">
+            <!-- Badge -->
+            @switch (product.availabilityStatus) {
+            @case ('In Stock') {
+            <span class="badge-status text-bg-success">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @case ('Low Stock') {
+            <span class="badge-status text-bg-warning">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @default {
+            <span class="badge-status text-bg-danger">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            }
             <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
             <div class="card-options">
               <ul class="list-inline link-offset-1-hover icons">
@@ -60,6 +103,27 @@
         <div class="carousel-item justify-content-between gap-4">
           @for(product of getFeaturedProducts.slice(8, 12); track product.id) {
           <div class="card">
+            <!-- Badge -->
+            @switch (product.availabilityStatus) {
+            @case ('In Stock') {
+            <span class="badge-status text-bg-success">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @case ('Low Stock') {
+            <span class="badge-status text-bg-warning">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            @default {
+            <span class="badge-status text-bg-danger">
+              {{product.availabilityStatus}}
+              <span class="visually-hidden">Availability Status</span>
+            </span>
+            }
+            }
             <img [src]="product.images[0]" class="card-img-top" [alt]="product.title.toLowerCase()">
             <div class="card-options">
               <ul class="list-inline link-offset-1-hover icons">

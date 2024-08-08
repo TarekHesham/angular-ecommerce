@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #1d1d1d;
-  color: white;
+  /* background-color: #1d1d1d; */
+  /* color: white; */
 
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
@@ -15,8 +15,13 @@ body {
   --bg-color-button: #fb2e86;
   --bg-color-sucsess-button: #28b75f;
   --bg-color-white-off: #f7f7f7;
+  --bg-color-prymary: #f9f8fe;
+
   --text-color-sub: #8a8fb9;
   --text-prymary: #151875;
   --text-dark: #1d1d1d;
   --text-prymary-dark: #0d134e;
+}
+.starsColor {
+  color: gold;
 }

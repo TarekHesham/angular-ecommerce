@@ -11,14 +11,14 @@ export interface Product {
   brand?: string;
   sku: string;
   weight: number;
-  dimensions: object;
+  dimensions: any;
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: object[];
+  reviews: any[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: object;
+  meta: any;
   images: string[];
   thumbnail: string;
 }

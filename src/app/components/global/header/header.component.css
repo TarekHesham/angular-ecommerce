@@ -1,6 +1,7 @@
 header {
   background-color: var(--bg-color-scound);
   font-weight: bold !important;
+  color: var(--bg-color-first);
 }
 ul {
   width: 33%;

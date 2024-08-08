@@ -20,6 +20,7 @@ import { ProductShopingCartComponent } from '../../components/product/product-sh
 })
 export class ProductDetailsComponent {
   productDetails: any;
+  globalProdacts = products;
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {

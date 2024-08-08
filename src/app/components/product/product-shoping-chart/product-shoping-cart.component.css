@@ -1,10 +1,12 @@
-.checked {
-  color: gold;
-}
 .card-title {
   font-size: 2rem;
   color: var(--text-prymary-dark);
+
+  span {
+    font-size: 14px;
+  }
 }
+
 .card-description {
   color: var(--text-dark);
 }
@@ -45,9 +47,8 @@ s {
 
 .gallery img:hover,
 .gallery:not(:has(img:hover)) img:first-child {
-  /* scale: 0.38; */
   position: absolute;
-  left: 15%;
+  left: 10%;
 
   max-width: 373px;
   max-height: 373px;
@@ -57,4 +58,14 @@ s {
   display: block;
   width: 300px;
   height: 300px;
+}
+
+.share li:nth-child(even) i {
+  color: var(--bg-color-button);
+}
+.share li:nth-child(odd) i {
+  color: var(--text-prymary-dark);
+}
+.share li {
+  font-size: 20px;
 }

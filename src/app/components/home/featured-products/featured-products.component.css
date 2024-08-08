@@ -7,6 +7,8 @@
   color: var(--text-prymary);
   transition: all 0.3s 0s ease-in-out;
   position: relative;
+
+  overflow: hidden;
 }
 .card h6 {
   color: var(--bg-color-button);
@@ -73,4 +75,13 @@ a {
   justify-content: center;
 
   display: none;
+}
+
+.badge-status {
+  position: absolute;
+  right: -13%;
+  top: 6%;
+  background-color: greenyellow;
+  padding: 0px 25px;
+  rotate: 45deg;
 }

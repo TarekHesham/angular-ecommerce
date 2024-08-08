@@ -1,7 +1,7 @@
-<div class="card mx-auto w-75 shoping-chart">
+<div class="card mx-auto w-75 shoping-chart shadow-lg">
   <div class="d-flex flex-column flex-md-row g-0 h-100">
     <div class="align-self-center d-flex flex-row align-items-center w-100">
-      <div class="d-none gallery d-md-flex flex-column align-items-center justify-content-evenly gap-3 w-50">
+      <div class="d-none gallery d-md-flex flex-column align-items-center justify-content-evenly gap-3 w-25">
         @for (image of product.images; track $index) {
         <img [src]="image" class="img-fluid rounded-start" alt="{{product.title}}">
         }
@@ -9,11 +9,27 @@
       <img [src]="product.thumbnail" class="d-block d-md-none mx-auto" alt="{{product.title}}">
     </div>
     <div>
-      <div class="card-body m-5">
-        <h5 class="card-title">{{product.title}}</h5>
+      <div class="card-body my-auto mt-5">
+        <h5 class="card-title">{{product.title}}
+          @switch (product.availabilityStatus) {
+          @case ('In Stock') {
+          <span class="badge text-bg-success">{{product.availabilityStatus}}</span>
+          }
+          @case ('Low Stock') {
+          <span class="badge text-bg-warning">{{product.availabilityStatus}}</span>
+          }
+          @default {
+          <span class="badge text-bg-danger">{{product.availabilityStatus}}</span>
+          }
+          }
+        </h5>
         <!-- Stars -->
-        <p class="card-text"><small>@for(star of this.startArray(product.rating); track
-            product.rating) { <span class="fa fa-star checked"></span> } ({{product.rating}})</small></p>
+        <p class="card-text d-flex ">
+          <small>
+            <app-starts [rating]="product.rating"></app-starts>
+          </small>
+          ({{product.rating}})
+        </p>
 
         <!-- Price -->
         <span class="price">${{ product.price | priceAfterOffer: product.discountPercentage
@@ -22,8 +38,32 @@
         <!-- Description -->
         <p class="card-description">{{product.description}}</p>
 
-        <a class="btn rounded-1 addCart" [routerLink]="['/cart', product.id]">Add To Cart <i
-            class="fa-regular fa-heart"></i></a>
+        <!-- Add to Cart -->
+        <div class="btn-group py-2 w-50 d-block" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btn-outline-primary" (click)="handleCount(false)"><i
+              class="fa-solid fa-circle-minus"></i></button>
+          <input type="tel" disabled pattern="[0-9]" name="count"
+            class="btn btn-outline-primary bg-white text-black w-25" #count [max]="product.stock" areia- min="0"
+            value="0">
+          <button type="button" class="btn btn-outline-primary" (click)="handleCount(true)"><i
+              class="fa-solid fa-circle-plus"></i></button>
+        </div>
+        <a class="btn rounded-1 addCart {{product.stock == 0 ? 'disabled' : ''}}" [routerLink]="['/cart', product.id]">
+          Add To Cart
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <!-- Social media -->
+        <div class="d-flex flex-column pt-3 gap-2">
+          <span>Category: {{product.category}}</span>
+          <span class="tags">Tags: #{{product.tags.join(", #")}}</span>
+          <ul class="share list-inline">
+            Share:
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

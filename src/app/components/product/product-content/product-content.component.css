@@ -1,0 +1,10 @@
+section {
+  background-color: var(--bg-color-prymary);
+  background-color: var(--bg-color-first);
+  color: var(--text-dark);
+  padding: 8vh;
+}
+
+.active {
+  color: var(--bg-color-button) !important;
+}
