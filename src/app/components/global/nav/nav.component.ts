@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,4 +8,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
 })
-export class NavComponent {}
+export class NavComponent {
+  @ViewChild('searchBar') searchBar!: ElementRef;
+
+  constructor(private router: Router) {}
+  hanleRoute() {
+    this.router.navigate(['/search', this.searchBar.nativeElement.value]);
+    this.searchBar.nativeElement.value = '';
+  }
+}

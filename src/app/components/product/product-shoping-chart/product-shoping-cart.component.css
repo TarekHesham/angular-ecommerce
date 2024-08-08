@@ -45,19 +45,12 @@ s {
   }
 }
 
-.gallery img:hover,
-.gallery:not(:has(img:hover)) img:first-child {
+.gallery img:active,
+.gallery:not(:has(img:active)) img:first-child {
   position: absolute;
-  left: 10%;
-
-  max-width: 373px;
-  max-height: 373px;
-}
-
-.showHover {
-  display: block;
-  width: 300px;
-  height: 300px;
+  left: 17%;
+  width: 300px !important;
+  height: 300px !important;
 }
 
 .share li:nth-child(even) i {
@@ -68,4 +61,19 @@ s {
 }
 .share li {
   font-size: 20px;
+}
+small {
+  display: flex;
+  gap: 5px;
+}
+.imgGallery:not(:active) {
+  width: 130px !important;
+  height: 130px !important;
+}
+.countAdd button {
+  background: #eeeffb;
+  color: #8830e1;
+}
+.countAdd input {
+  border-color: #eeeffb;
 }

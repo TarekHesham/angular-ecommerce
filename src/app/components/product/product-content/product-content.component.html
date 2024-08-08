@@ -12,56 +12,10 @@
     </ul>
     @switch (displayComponent) {
     @case (0) {
-    <div class="d-flex justify-content-evenly mt-3">
-      <ul class="list-group pe-3">
-        <li class="list-group-item"><i class="fa-regular fa-calendar-check"></i>
-          {{product.warrantyInformation}}</li>
-        <li class="list-group-item"><i class="fa-solid fa-truck-fast"></i> {{product.shippingInformation}}
-        </li>
-        <li class="list-group-item"><i class="fa-solid fa-rotate-left"></i> {{product.returnPolicy}}
-        </li>
-      </ul>
-      <table class="table table-sm w-25 text-center">
-        <thead>
-          <tr>
-            <th colspan="2" scope="col">Dimensions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Width</td>
-            <td>{{product.dimensions?.width}}</td>
-          </tr>
-          <tr>
-            <td>Height</td>
-            <td>{{product.dimensions?.height}}</td>
-          </tr>
-          <tr>
-            <td>Depth</td>
-            <td>{{product.dimensions?.depth}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <img [src]="product.meta.qrCode" alt="Scan Product">
-    </div>
+    <app-additional [product]="product"></app-additional>
     }
     @case (1) {
-    <div class="list-group p-3">
-      @for (user of product.reviews; track $index) {
-      <span class="list-group-item list-group-item-action mb-2" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">{{user.reviewerName}}</h5>
-          <small>
-            @for(star of this.startsArray(user.rating); track $index) {
-            <span class="fa fa-star starsColor"></span>
-            } ({{user.rating}})
-          </small>
-        </div>
-        <p class="mb-1"><i class="fa-solid fa-caret-right"></i> {{user.comment}}</p>
-        <small>{{user.date | date:'medium'}}</small>
-      </span>
-      }
-    </div>
+    <app-reviews [productReviews]="product.reviews"></app-reviews>
     }
     }
   </article>

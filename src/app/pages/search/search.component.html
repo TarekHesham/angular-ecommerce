@@ -1,0 +1,17 @@
+<app-hero [titlePage]="'Search In Products'"></app-hero>
+@if (searchResualts.length === 0) {
+<section class="w-75  mx-auto p-5 m-2 rounded-2 text-center">
+  <div class="alert alert-danger d-flex align-items-center" role="alert">
+
+    <i class="fa-solid fa-triangle-exclamation me-3"></i>
+    <div>
+      <h2 class="text-danger">No results for {{searchQuery}}.</h2>
+      <p class="text-start">Try checking your spelling or use more general terms
+        Check each product page for other buying options.</p>
+    </div>
+  </div>
+
+</section>
+}@else {
+<app-resualts [productResalts]="searchResualts"></app-resualts>
+}

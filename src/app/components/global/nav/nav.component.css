@@ -2,7 +2,17 @@ nav {
   background-color: white !important;
   color: #0d0e43;
   font-weight: bold !important;
+  border-bottom: 1px solid var(--bg-color-sub);
 }
 .active-link {
   color: #fb2e86 !important;
+}
+.search {
+  width: 30%;
+}
+.btn {
+  background-color: var(--bg-color-button);
+}
+.btn i {
+  color: white;
 }

@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Product } from '../../../types/product';
-import { DatePipe } from '@angular/common';
+import { AdditionalComponent } from '../additional/additional.component';
+import { ReviewsComponent } from '../reviews/reviews.component';
 
 @Component({
   selector: 'app-product-content',
   standalone: true,
-  imports: [DatePipe],
+  imports: [AdditionalComponent, ReviewsComponent],
   templateUrl: './product-content.component.html',
   styleUrl: './product-content.component.css',
 })

@@ -1,12 +1,12 @@
-<div class="card mx-auto w-75 shoping-chart shadow-lg">
+<div class="card mx-auto w-75 shoping-chart shadow-lg border-0">
   <div class="d-flex flex-column flex-md-row g-0 h-100">
-    <div class="align-self-center d-flex flex-row align-items-center w-100">
-      <div class="d-none gallery d-md-flex flex-column align-items-center justify-content-evenly gap-3 w-25">
+    <div class="align-self-center d-flex flex-column flex-xl-row align-items-center col-6">
+      <div class="d-none gallery d-xl-flex flex-column align-items-center justify-content-evenly gap-3 w-25 ps-5">
         @for (image of product.images; track $index) {
-        <img [src]="image" class="img-fluid rounded-start" alt="{{product.title}}">
+        <img [src]="image" class="imgGallery" alt="{{product.title}}">
         }
       </div>
-      <img [src]="product.thumbnail" class="d-block d-md-none mx-auto" alt="{{product.title}}">
+      <img [src]="product.images[0]" class="d-block d-xl-none" width="300px" height="300px" alt="{{product.title}}">
     </div>
     <div>
       <div class="card-body my-auto mt-5">
@@ -24,11 +24,11 @@
           }
         </h5>
         <!-- Stars -->
-        <p class="card-text d-flex ">
-          <small>
-            <app-starts [rating]="product.rating"></app-starts>
+        <p class="card-text">
+          <small class="d-flex">
+            <app-stars [rating]="product.rating"></app-stars>
+            ({{product.rating}})
           </small>
-          ({{product.rating}})
         </p>
 
         <!-- Price -->
@@ -39,20 +39,18 @@
         <p class="card-description">{{product.description}}</p>
 
         <!-- Add to Cart -->
-        <div class="btn-group py-2 w-50 d-block" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn btn-outline-primary" (click)="handleCount(false)"><i
+        <div class="btn-group py-2 w-50 d-block countAdd" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn" (click)="handleCount(false)"><i
               class="fa-solid fa-circle-minus"></i></button>
-          <input type="tel" disabled pattern="[0-9]" name="count"
-            class="btn btn-outline-primary bg-white text-black w-25" #count [max]="product.stock" areia- min="0"
-            value="0">
-          <button type="button" class="btn btn-outline-primary" (click)="handleCount(true)"><i
+          <input type="tel" disabled name="count" class="btn bg-white text-black w-25" #count [max]="product.stock"
+            areia- min="0" value="0">
+          <button type="button" class="btn" (click)="handleCount(true)" [disabled]="disableCounter"><i
               class="fa-solid fa-circle-plus"></i></button>
         </div>
         <a class="btn rounded-1 addCart {{product.stock == 0 ? 'disabled' : ''}}" [routerLink]="['/cart', product.id]">
           Add To Cart
           <i class="fa-regular fa-heart"></i>
         </a>
-
         <!-- Social media -->
         <div class="d-flex flex-column pt-3 gap-2">
           <span>Category: {{product.category}}</span>

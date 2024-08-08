@@ -1,3 +1,16 @@
+interface Meta {
+  createdAt: string;
+  updatedAt: string;
+  barcode: string;
+  qrCode: string;
+}
+interface Review {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+}
 export interface Product {
   id: number;
   title: string;
@@ -15,10 +28,10 @@ export interface Product {
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: any[];
+  reviews: Review[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: any;
+  meta: Meta;
   images: string[];
   thumbnail: string;
 }

@@ -8,7 +8,9 @@ body {
   font-weight: 600;
   font-style: normal;
 }
-
+* {
+  object-fit: contain;
+}
 :root {
   --bg-color-first: #eeeffb;
   --bg-color-scound: #7e33e0;
@@ -18,10 +20,37 @@ body {
   --bg-color-prymary: #f9f8fe;
 
   --text-color-sub: #8a8fb9;
+  --text-sub-dark: #9da0ae;
+  --text-icons: #535399;
   --text-prymary: #151875;
   --text-dark: #1d1d1d;
   --text-prymary-dark: #0d134e;
+
+  --bg-shade: #eeeffb;
+  --bg-color-sub: #e7e4f8;
+
+  --shadow: #d5d5d5;
 }
 .starsColor {
   color: gold;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--text-color-sub);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-color-scound);
 }

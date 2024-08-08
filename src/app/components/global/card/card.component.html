@@ -1,0 +1,31 @@
+<div class="card mb-3 border-0 w-75 mx-auto">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img [src]="productDetails.images[0]" class="img-fluid rounded-start" [alt]="productDetails.title"
+        [routerLink]="['/product-details', productDetails.id, productDetails.title]">
+    </div>
+    <div class="col-md-8 my-auto">
+      <div class="card-body">
+        <h5 class="card-title" [routerLink]="['/product-details', productDetails.id, productDetails.title]">
+          {{productDetails.title}}</h5>
+        <!-- Price And Stars -->
+        <small class="d-flex gap-3">
+          <span class="price gap-3">
+            ${{ productDetails.price | priceAfterOffer: productDetails.discountPercentage}}
+            <s>${{productDetails.price}}</s>
+          </span>
+          <app-stars [rating]="productDetails.rating"></app-stars>
+        </small>
+        <!-- Description -->
+        <p class="card-text" [routerLink]="['/product-details', productDetails.id, productDetails.title]">
+          {{productDetails.description}}</p>
+
+        <div class="icons d-flex gap-4">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

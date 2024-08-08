@@ -1,18 +1,20 @@
 <h2>Related Products</h2>
-<section class="related w-75 d-flex mx-auto justify-content-between">
+<section class="related  w-75 d-flex flex-column flex-sm-row flex-wrap mx-auto gap-3 justify-content-md-between">
   @for (product of relatedProducts; track product.id) {
-  <div class="relatedProducts my-5">
-    <img [src]="product.thumbnail" class="card-img-top" [alt]="product.title">
-    <div class="card-body d-flex flex-row flex-nowrap justify-content-around">
-      <div>
-        <h6 class="card-title">{{product.title}}</h6>
+  <div class="relatedProducts mx-auto mx-md-0">
+    <a [routerLink]="['/product-details', product.id, product.title]">
+      <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
+    </a>
+    <div class="card-body d-flex flex-row flex-nowrap justify-content-around mt-2">
+      <div class="col-7">
+        <h6 class="card-title" [routerLink]="['/product-details', product.id, product.title]">{{product.title}}</h6>
         <span class="price">${{ product.price | priceAfterOffer: product.discountPercentage
           }} | <s>${{product.price}}</s></span>
       </div>
-      <div>
-        <p class="card-text"><small>@for(star of this.startsArray(product.rating); track
-            $index) { <span class="fa fa-star starsColor"></span> }</small></p>
-      </div>
+      <small>
+        <app-stars [rating]="product.rating"></app-stars>
+      </small>
+
     </div>
   </div>
   }

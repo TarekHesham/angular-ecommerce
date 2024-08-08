@@ -1,8 +1,28 @@
 .relatedProducts {
-  width: 20%;
+  width: 200px;
 }
 h2 {
   margin-top: 5%;
   margin-left: 12%;
   margin-bottom: 0;
+}
+.card-title {
+  font-size: 14px;
+}
+.card-text {
+  font-size: 13px;
+}
+.price {
+  font-size: 13px;
+}
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+section {
+  margin-bottom: 5%;
+}
+h6 {
+  cursor: pointer;
 }

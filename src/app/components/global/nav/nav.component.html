@@ -8,7 +8,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active-link">Home</a>
+          <a class="nav-link" aria-current="page" routerLink="/" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <!-- Deals -->
         <li class="nav-item">
@@ -31,14 +32,17 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/products" routerLinkActive="active-link">Contact</a>
+          <a class="nav-link" routerLink="/test" routerLinkActive="active-link">Contact</a>
         </li>
       </ul>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchProdact">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="d-flex input-group search">
+        <input class="form-control rounded-start-1" type="search" placeholder="Search" aria-label="Search"
+          name="searchProdact" #searchBar (keyup.enter)="hanleRoute()">
+        <button class="btn rounded-end-1" type="submit" (click)="hanleRoute()"><i
+            class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
     </div>
   </div>
 </nav>

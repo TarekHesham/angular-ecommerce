@@ -1,0 +1,32 @@
+<div class="d-flex flex-column flex-lg-row  mt-3 gap-2">
+  <ul class="list-group mx-auto">
+    <li class="list-group-item"><i class="fa-regular fa-calendar-check"></i>
+      {{product.warrantyInformation}}</li>
+    <li class="list-group-item"><i class="fa-solid fa-truck-fast"></i> {{product.shippingInformation}}
+    </li>
+    <li class="list-group-item"><i class="fa-solid fa-rotate-left"></i> {{product.returnPolicy}}
+    </li>
+  </ul>
+  <table class="table table-sm text-center mx-auto w-25">
+    <thead>
+      <tr>
+        <th colspan="2" scope="col">Dimensions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Width</td>
+        <td>{{product.dimensions?.width}}</td>
+      </tr>
+      <tr>
+        <td>Height</td>
+        <td>{{product.dimensions?.height}}</td>
+      </tr>
+      <tr>
+        <td>Depth</td>
+        <td>{{product.dimensions?.depth}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <img [src]="product.meta.qrCode" class="mx-auto" alt="Scan Product">
+</div>

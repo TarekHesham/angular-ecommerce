@@ -14,8 +14,10 @@
   color: var(--bg-color-button);
 }
 .card img {
+  width: 100%;
   height: 200px;
   background-color: var(--bg-color-white-off);
+  object-fit: contain;
 }
 .card:hover {
   scale: 1.03;
@@ -32,11 +34,10 @@
     filter: brightness(0.6);
   }
 }
-.carousel-indicators {
-  bottom: -20% !important;
-}
+
 .carousel-inner {
   overflow: visible;
+  height: 400px;
 }
 section {
   padding-bottom: 5%;
@@ -81,7 +82,9 @@ a {
   position: absolute;
   right: -13%;
   top: 6%;
-  background-color: greenyellow;
   padding: 0px 25px;
   rotate: 45deg;
+}
+.carousel-indicators [data-bs-target] {
+  background-color: var(--text-prymary);
 }

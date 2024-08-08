@@ -15,9 +15,22 @@ span {
   background-color: var(--bg-color-button);
   color: white !important;
 }
+.btn:active {
+  background-color: var(--bg-color-button);
+  color: white !important;
+
+  opacity: 1.3;
+  scale: 1.05;
+}
 .active {
   text-align: -webkit-center;
 }
 .gallery {
   width: 85%;
+  justify-content: space-around;
+}
+.gallery img {
+  object-fit: contain;
+  height: 350px;
+  width: 400px;
 }

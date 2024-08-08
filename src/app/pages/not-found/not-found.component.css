@@ -1,0 +1,12 @@
+.btn {
+  background-color: var(--bg-color-button);
+  color: white;
+  width: 165px;
+  height: 45px;
+}
+.btn:active {
+  background-color: var(--bg-color-button);
+  color: white;
+  opacity: 0.8;
+  scale: 1.05;
+}

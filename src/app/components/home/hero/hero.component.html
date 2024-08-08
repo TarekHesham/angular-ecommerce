@@ -16,7 +16,7 @@
             <a class="btn rounded-1" [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">Shop
               Now</a>
           </div>
-          <img [src]="product.thumbnail" class="float-end" [alt]="product.title" width="400px">
+          <img [src]="product.images[0]" class="float-end" [alt]="product.title">
         </div>
       </div>
       }
