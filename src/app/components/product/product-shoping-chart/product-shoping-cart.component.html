@@ -11,17 +11,13 @@
     <div>
       <div class="card-body my-auto mt-5">
         <h5 class="card-title">{{product.title}}
-          @switch (product.availabilityStatus) {
-          @case ('In Stock') {
-          <span class="badge text-bg-success">{{product.availabilityStatus}}</span>
-          }
-          @case ('Low Stock') {
-          <span class="badge text-bg-warning">{{product.availabilityStatus}}</span>
-          }
-          @default {
-          <span class="badge text-bg-danger">{{product.availabilityStatus}}</span>
-          }
-          }
+          @if (product.stock > 10) {
+          <span class="badge text-bg-success">In Stock</span>
+          } @else if (product.stock < 10 && product.stock> 0) { <span class="badge text-bg-warning">Low Stock</span>
+            } @else {
+            <span class="badge text-bg-danger">Out Stock</span>
+            }
+
         </h5>
         <!-- Stars -->
         <p class="card-text">
@@ -40,17 +36,18 @@
 
         <!-- Add to Cart -->
         <div class="btn-group py-2 w-50 d-block countAdd" role="group" aria-label="Basic outlined example">
-          <button type="button" class="btn" (click)="handleCount(false)"><i
+          <button type="button" class="btn" (click)="handleCount(false)" [disabled]="+count.value === 0"><i
               class="fa-solid fa-circle-minus"></i></button>
           <input type="tel" disabled name="count" class="btn bg-white text-black w-25" #count [max]="product.stock"
             areia- min="0" value="0">
-          <button type="button" class="btn" (click)="handleCount(true)" [disabled]="disableCounter"><i
+          <button type="button" class="btn" (click)="handleCount(true)" [disabled]="+count.value >= product.stock"><i
               class="fa-solid fa-circle-plus"></i></button>
         </div>
-        <a class="btn rounded-1 addCart {{product.stock == 0 ? 'disabled' : ''}}" [routerLink]="['/cart', product.id]">
+        <button (click)="handleCart(product, count.value)"
+          class="btn rounded-1 addCart {{product.stock == 0 || +count.value == 0 ? 'disabled' : ''}}">
           Add To Cart
           <i class="fa-regular fa-heart"></i>
-        </a>
+        </button>
         <!-- Social media -->
         <div class="d-flex flex-column pt-3 gap-2">
           <span>Category: {{product.category}}</span>

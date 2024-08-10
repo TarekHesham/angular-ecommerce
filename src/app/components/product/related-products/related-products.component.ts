@@ -14,13 +14,6 @@ import { StarsComponent } from '../../global/stars/stars.component';
 export class RelatedProductsComponent {
   @Input() relatedProducts: Product[] | any;
 
-  ngOnInit() {
-    this.relatedProducts = this.relatedProducts
-      // .filter((pro: Product) => pro.rating > 4)
-      .sort((a: Product, z: Product) => Math.random() - 0.5)
-      .slice(0, 4);
-  }
-
   startsArray(start: any) {
     return new Array(Math.floor(start));
   }

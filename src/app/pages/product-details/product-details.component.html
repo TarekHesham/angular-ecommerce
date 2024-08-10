@@ -1,4 +1,8 @@
 <app-hero [titlePage]="'Prodact Details'"></app-hero>
+@if(productDetails) {
 <app-product-shoping-cart [product]="productDetails"></app-product-shoping-cart>
 <app-product-content [product]="productDetails"></app-product-content>
+}
+@if(relatedProducts) {
 <app-related-products [relatedProducts]="relatedProducts"></app-related-products>
+}

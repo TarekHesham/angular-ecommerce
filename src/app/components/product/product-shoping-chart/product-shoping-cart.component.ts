@@ -3,6 +3,7 @@ import { Product } from '../../../types/product';
 import { PriceAfterOfferPipe } from '../../../pipes/price-after-offer.pipe';
 import { RouterLink } from '@angular/router';
 import { StarsComponent } from '../../global/stars/stars.component';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-shoping-cart',
@@ -12,17 +13,32 @@ import { StarsComponent } from '../../global/stars/stars.component';
   styleUrl: './product-shoping-cart.component.css',
 })
 export class ProductShopingCartComponent {
-  disableCounter: boolean = false;
-
   @Input() product!: Product;
   @ViewChild('count') countProduct!: ElementRef;
+
+  constructor(private cart: CartService) {}
+
+  ngOnInit() {
+    const productInCart = this.cart.getFromCart(this.product.id);
+    if (productInCart) this.product.stock -= productInCart.count;
+  }
+
   handleCount(add: boolean) {
-    let ele = this.countProduct.nativeElement;
+    const ele = this.countProduct.nativeElement;
 
     if (add && +ele.value < this.product.stock) ele.value++;
     else if (!add && +ele.value > 0) ele.value--;
+  }
 
-    if (+ele.value == this.product.stock) this.disableCounter = true;
-    else this.disableCounter = false;
+  handleCart(product: Product, count: string) {
+    try {
+      const addedToCart = this.cart.setToCart(product, +count);
+      if (addedToCart) {
+        this.product.stock -= +count;
+        this.countProduct.nativeElement.value = '0';
+      }
+    } catch (err) {
+      console.error(`FROM Product shoping cart [ts] file...`);
+    }
   }
 }
