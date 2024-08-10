@@ -1,5 +1,9 @@
-<section class="w-75 mx-auto m-5">
+<section [className]="display == 'grid' ? 'w-75 mx-auto m-5 d-flex gap-3 flex-wrap' : 'w-75 mx-auto m-5'">
   @for(product of productResalts; track product.id) {
+  @if(display == 'list') {
   <app-card [productDetails]="product"></app-card>
+  } @else {
+  <app-card-grid [productDetails]="product"></app-card-grid>
+  }
   }
 </section>

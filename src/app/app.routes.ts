@@ -24,9 +24,10 @@ export const routes: Routes = [
     title: 'TarekBaba | Product Details',
   },
   {
-    path: 'search/:query',
+    path: 'search',
     component: SearchComponent,
     title: 'TarekBaba | Search In Products',
+    pathMatch: 'full',
   },
   {
     path: 'login',

@@ -1,0 +1,30 @@
+.container {
+  width: 35%;
+  height: 650px;
+}
+p,
+a,
+label {
+  color: var(--text-gray-light);
+}
+
+form a:hover {
+  color: var(--bg-color-button);
+  cursor: pointer;
+}
+.btnLogin {
+  color: var(--bg-shade);
+  background-color: var(--bg-color-button);
+  border-radius: 4px;
+  border: 0;
+  width: 100%;
+  padding: 6px 12px;
+}
+h1,
+p {
+  margin: 0;
+}
+input:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}

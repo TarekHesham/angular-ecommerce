@@ -1,0 +1,91 @@
+<form [formGroup]="registerForm" (ngSubmit)="handleFormSubmit()" #form
+  class="container scaleForm m-auto shadow p-5 my-5 d-flex flex-column justify-content-evenly align-items-center {{registerForm.errors || password?.invalid ? '' :'was-validated'}}">
+  <h1>Register</h1>
+  <!-- Name -->
+  <div class="form-floating w-100">
+    <input type="name" formControlName="name"
+      class="form-control rounded-1 {{name?.invalid && name?.touched ? 'is-invalid' : ''}}" placeholder="Your Full Name"
+      id="name">
+    <label for="name">Your Full Name</label>
+    @if(name?.invalid && name?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(name?.hasError('required')){
+      <span>Enter your full name.</span>
+      }
+      @if(name?.hasError('minLength')){
+      <span>Wrong please enter your full name and try again.</span>
+      }
+    </div>
+    }
+  </div>
+  <!-- username -->
+  <div class="form-floating w-100">
+    <input type="username" formControlName="username"
+      class="form-control rounded-1 {{username?.invalid && username?.touched ? 'is-invalid' : ''}}"
+      placeholder="Username" id="username">
+    <label for="username">Username</label>
+    @if(username?.invalid && username?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(username?.hasError('required')){
+      <span>Enter your username.</span>
+      }
+      @if(username?.hasError('maxLength')){
+      <span>Max Length username is 10 char...</span>
+      }
+    </div>
+    }
+  </div>
+  <!-- Email -->
+  <div class="form-floating w-100">
+    <input type="email" formControlName="email"
+      class="form-control rounded-1 {{email?.invalid && email?.touched ? 'is-invalid' : ''}}"
+      placeholder="Email address" id="email">
+    <label for="email">Email address</label>
+    @if(email?.invalid && email?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(email?.hasError('required')){
+      <span>Enter your email.</span>
+      }
+      @if(email?.hasError('email')){
+      <span>Wrong or Invalid email address. Please correct and try again.</span>
+      }
+    </div>
+    }
+  </div>
+  <!-- Password -->
+  <div class="form-floating w-100">
+    <input type="password" formControlName="password"
+      class="form-control rounded-1 {{password?.invalid && password?.touched ? 'is-invalid' : ''}}"
+      placeholder="Password" id="password">
+    <label for="password">Password</label>
+    @if(password?.invalid && password?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(password?.hasError('required')){
+      <span>Please enter your password !!</span>
+      }
+      @if(password?.hasError('pattern')){
+      <span>Please provide a valid password.</span>
+      }
+    </div>
+    }
+  </div>
+  <!-- Confirm Password -->
+  <div class="form-floating w-100">
+    <input type="password" formControlName="confirmPassword"
+      class="form-control rounded-1 {{confirmPassword?.invalid && confirmPassword?.touched ? 'is-invalid' : ''}}"
+      placeholder="Confirm Password" id="confirmPassword" name="confirmPassword">
+    <label for="confirmPassword">Confirm Password</label>
+    @if(confirmPassword?.touched){
+    <div class="form-text text-danger">
+      @if(confirmPassword?.hasError('required')) {
+      <span>Please enter password again !!</span>
+      } @else if (registerForm.hasError('mismatch')) {
+      <span>Password dosn't same !!</span>
+      }
+    </div>
+    }
+  </div>
+  <input type="submit" class="btnLogin" value="CREATE ACCOUNT"
+    [disabled]="password?.invalid || confirmPassword?.invalid || registerForm.errors">
+  <a class="text-decoration-none mt-3" (click)="toggleForm(form)">Already have an account? Login here</a>
+</form>

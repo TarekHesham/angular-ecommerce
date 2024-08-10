@@ -13,7 +13,11 @@ export class NavComponent {
 
   constructor(private router: Router) {}
   hanleRoute() {
-    this.router.navigate(['/search', this.searchBar.nativeElement.value]);
+    this.router.navigate(['/search'], {
+      queryParams: {
+        query: this.searchBar.nativeElement.value,
+      },
+    });
     this.searchBar.nativeElement.value = '';
   }
 }

@@ -11,12 +11,13 @@
       <div class="carousel-item {{$index == 0 ? 'active' : ''}}">
         <div class="d-flex align-items-center gallery">
           <div class="d-none d-md-flex flex-column align-items-start text-start">
-            <h2>{{product.title}}</h2>
+            <h2 [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">{{product.title}}</h2>
             <p>{{product.description}}</p>
             <a class="btn rounded-1" [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">Shop
               Now</a>
           </div>
-          <img [src]="product.images[0]" class="float-end" [alt]="product.title">
+          <img [src]="product.images[0]" class="float-end" [alt]="product.title"
+            [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
         </div>
       </div>
       }

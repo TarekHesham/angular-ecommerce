@@ -28,22 +28,17 @@ export class ProductDetailsComponent {
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.routeSub = this.activatedRoute.params
-      .pipe(
-        switchMap((params) => {
-          const { id } = params;
-          this.productDetails = products.find((item) => item.id === +id);
-          this.relatedProducts = products
-            .filter(
-              (pro) =>
-                pro.category === this.productDetails.category &&
-                pro !== this.productDetails
-            )
-            .slice(0, 4);
-          return [];
-        })
-      )
-      .subscribe();
+    this.routeSub = this.activatedRoute.params.subscribe((params) => {
+      const { id } = params;
+      this.productDetails = products.find((item) => item.id === +id);
+      this.relatedProducts = products
+        .filter(
+          (pro) =>
+            pro.category === this.productDetails.category &&
+            pro !== this.productDetails
+        )
+        .slice(0, 4);
+    });
   }
 
   ngOnDestroy() {

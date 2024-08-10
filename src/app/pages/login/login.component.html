@@ -1,1 +1,6 @@
-<p>login works!</p>
+<app-hero [titlePage]=" formDisplay ? 'Login Page' : 'Register Page' "></app-hero>
+@if (formDisplay) {
+<app-loginForm (formPage)="displayForm($event)"></app-loginForm>
+} @else {
+<app-register-form (formPage)="displayForm($event)"></app-register-form>
+}

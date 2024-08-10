@@ -1,3 +1,13 @@
 i {
   font-size: 100px;
 }
+svg {
+  width: 16px;
+  cursor: pointer;
+}
+.activeDisplay {
+  color: var(--bg-color-scound);
+}
+svg:hover {
+  color: var(--bg-color-scound);
+}

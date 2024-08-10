@@ -4,6 +4,7 @@ import products from '../../../../public/data/products.json';
 import { Product } from '../../types/product';
 import { ActivatedRoute } from '@angular/router';
 import { ResualtsComponent } from '../../components/search/resualts/resualts.component';
+import { Subscription, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -15,14 +16,26 @@ import { ResualtsComponent } from '../../components/search/resualts/resualts.com
 export class SearchComponent {
   searchResualts!: Product[];
   searchQuery!: string;
+  showDisplay: string = 'grid';
 
+  private routeSub!: Subscription;
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    const { query } = this.activatedRoute.snapshot.params;
-    this.searchResualts = products.filter((item) =>
-      item.title.toLowerCase().includes(query.toLowerCase())
-    );
-    this.searchQuery = query;
+    this.routeSub = this.activatedRoute.queryParams.subscribe((params) => {
+      const { query } = params;
+      this.searchResualts = query
+        ? products.filter((item) =>
+            item.title.toLowerCase().includes(query.toLowerCase())
+          )
+        : [];
+      this.searchQuery = query;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.routeSub) {
+      this.routeSub.unsubscribe();
+    }
   }
 }

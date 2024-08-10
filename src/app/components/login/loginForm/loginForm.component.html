@@ -1,0 +1,40 @@
+<form [formGroup]="loginForm" (ngSubmit)="handleFormSubmit()" #form
+  class="container scaleForm m-auto shadow p-5 my-5 d-flex flex-column justify-content-evenly align-items-center {{email?.invalid || password?.invalid ? '' :'was-validated'}}">
+  <h1>Login</h1>
+  <p>Please login using account detail bellow.</p>
+  <div class="form-floating w-100">
+    <input type="email" formControlName="email"
+      class="form-control rounded-1 {{email?.invalid && email?.touched ? 'is-invalid' : ''}}" id="floatingInput"
+      placeholder="Email address" id="email" name="email" autocomplete="email">
+    <label for="email">Email address</label>
+    @if(email?.invalid && email?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(email?.hasError('required')){
+      <span>Enter your email.</span>
+      }
+      @if(email?.hasError('email')){
+      <span>Wrong or Invalid email address. Please correct and try again.</span>
+      }
+    </div>
+    }
+  </div>
+  <div class="form-floating w-100">
+    <input type="password" formControlName="password"
+      class="form-control rounded-1 {{password?.invalid && password?.touched ? 'is-invalid' : ''}}" id="password"
+      placeholder="Password" name="password">
+    <label for="password">Password</label>
+    @if(password?.invalid && password?.touched){
+    <div id="recipe-name" class="form-text text-danger">
+      @if(password?.hasError('required')){
+      <span>Please enter your password !!</span>
+      }
+      @if(password?.hasError('pattern')){
+      <span>Please provide a valid password.</span>
+      }
+    </div>
+    }
+  </div>
+  <a href="#" class="text-decoration-none align-self-start">Forgot your password?</a>
+  <input type="submit" class="btnLogin" value="Sign In" [disabled]="email?.invalid || password?.invalid">
+  <a class="text-decoration-none mt-3" (click)="toggleForm(form)">Don’t have an Account?Create account</a>
+</form>

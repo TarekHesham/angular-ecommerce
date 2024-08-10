@@ -1,0 +1,23 @@
+<section class="d-flex flex-column gap-2 text-center"
+  [routerLink]="['/product-details', productDetails.id, productDetails.title]">
+  <div class="card-img">
+    <img [src]="productDetails.images[0]" [alt]="productDetails.title">
+    <ul class="list-unstyled d-none">
+      <li><i class="fa-solid fa-cart-shopping"></i></li>
+      <li><i class="fa-solid fa-magnifying-glass"></i></li>
+      <li><i class="fa-regular fa-heart"></i></li>
+    </ul>
+  </div>
+  <div class="card-info">
+    <h2>{{productDetails.title}}</h2>
+    <div class="line d-flex flex-row justify-content-center gap-2">
+      <span id="one"></span>
+      <span id="two"></span>
+      <span id="three"></span>
+    </div>
+    <span class="price gap-3">
+      ${{ productDetails.price | priceAfterOffer: productDetails.discountPercentage}}
+      <s>${{productDetails.price}}</s>
+    </span>
+  </div>
+</section>

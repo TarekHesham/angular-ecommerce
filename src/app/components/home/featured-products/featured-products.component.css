@@ -9,21 +9,24 @@
   position: relative;
 
   overflow: hidden;
+  border: 0;
 }
 .card h6 {
   color: var(--bg-color-button);
 }
 .card img {
   width: 100%;
-  height: 200px;
-  background-color: var(--bg-color-white-off);
+  height: 225px;
+  background-color: var(--bg-color-off-white);
   object-fit: contain;
+  position: relative;
 }
 .card:hover {
-  scale: 1.03;
-  background-color: var(--text-prymary);
   color: var(--bg-color-white-off);
 
+  .card-body {
+    background-color: var(--text-prymary-light);
+  }
   h6 {
     color: var(--bg-color-white-off);
   }
@@ -31,10 +34,20 @@
     display: flex !important;
   }
   img {
-    filter: brightness(0.6);
+    padding: 10%;
+    background-color: var(--bg-color-white-off) !important;
   }
 }
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 
+  a {
+    text-decoration: none;
+  }
+}
 .carousel-inner {
   overflow: visible;
   height: 400px;
@@ -46,45 +59,74 @@ section {
 }
 a {
   text-decoration: none;
+  h6 {
+    margin: 0;
+  }
 }
 .icons {
   display: flex;
-  gap: 8px;
+  gap: 2px;
   position: absolute;
   top: 8px;
   left: 8px;
 }
-.icons i {
-  color: var(--text-prymary);
-  background-color: #efefef !important;
-  padding: 5px;
-  border-radius: 50%;
+.icons li i {
+  padding: 8px;
+  color: #1389ff;
 }
-.icons .first i {
-  color: var(--bg-color-scound) !important;
+.icons li.first i {
+  color: var(--text-prymary-light);
+  background-color: #eeeffb !important;
+
+  border-radius: 50%;
 }
 .card-options {
   position: absolute;
-  width: 102%;
-  height: 66%;
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   flex-wrap: nowrap;
-  justify-content: center;
-
+  justify-content: flex-end;
   display: none;
+  width: 100%;
+  height: 75%;
+
+  .btn {
+    border-color: #08d15f;
+    background-color: #08d15f;
+    position: absolute;
+    bottom: 14%;
+    padding: 2px 6px;
+  }
 }
 
 .badge-status {
   position: absolute;
   right: -13%;
-  top: 6%;
+  top: 5.5%;
   padding: 0px 25px;
   rotate: 45deg;
+  z-index: 1;
 }
 .carousel-indicators [data-bs-target] {
-  background-color: var(--text-prymary);
+  background-color: var(--bg-color-button);
+}
+#one,
+#two,
+#three {
+  display: inline;
+  width: 15px;
+  height: 5px;
+  border-radius: 5px;
+}
+#one {
+  background-color: #de9034;
+}
+#two {
+  background-color: #ec42a2;
+}
+#three {
+  background-color: #8568ff;
 }

@@ -35,9 +35,10 @@
     </li>
 
     <!-- Icons -->
-    <a href="#" class="text-decoration-none text-white">Login <i class="fa-regular fa-user"></i></a>
-    <a href="#" class="text-decoration-none text-white">Wichlist <i class="fa-solid fa-heart"></i></a>
-    <a href="#" class="text-decoration-none text-white"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a [routerLink]="['/login']" class="text-decoration-none text-white">Login <i class="fa-regular fa-user"></i></a>
+    <a [routerLink]="['/wichlist']" class="text-decoration-none text-white">Wichlist <i
+        class="fa-solid fa-heart"></i></a>
+    <a [routerLink]="['/cart']" class="text-decoration-none text-white"><i class="fa-solid fa-cart-shopping"></i></a>
   </ul>
 </header>
 <app-nav></app-nav>

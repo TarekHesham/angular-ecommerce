@@ -11,7 +11,7 @@
       <div class="carousel-inner">
         <div class="carousel-item justify-content-between active gap-4">
           @for(product of getFeaturedProducts.slice(0, 4); track product.id) {
-          <div class="card">
+          <div class="card shadow">
             <!-- Badge -->
             @switch (product.availabilityStatus) {
             @case ('In Stock') {
@@ -45,11 +45,15 @@
                 [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
                 Details</a>
             </div>
-            <div class="card-body">
+            <div class="card-body justify-content-between gap-2">
               <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
                 <h6>{{product.title}}</h6>
               </a>
-              <hr>
+              <div class="line d-flex flex-row justify-content-center gap-2">
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+              </div>
               <p class="card-text">${{product.price}}</p>
             </div>
           </div>
@@ -57,7 +61,7 @@
         </div>
         <div class="carousel-item justify-content-between gap-4">
           @for(product of getFeaturedProducts.slice(4, 8); track product.id) {
-          <div class="card">
+          <div class="card shadow">
             <!-- Badge -->
             @switch (product.availabilityStatus) {
             @case ('In Stock') {
@@ -82,7 +86,7 @@
             <img [src]="product.images[0]" class="card-img-top" [alt]="product.title">
             <div class="card-options">
               <ul class="list-inline link-offset-1-hover icons">
-                <li class="first"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a></li>
               </ul>
@@ -90,11 +94,15 @@
                 [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
                 Details</a>
             </div>
-            <div class="card-body">
+            <div class="card-body justify-content-between gap-2">
               <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
                 <h6>{{product.title}}</h6>
               </a>
-              <hr>
+              <div class="line d-flex flex-row justify-content-center gap-2">
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+              </div>
               <p class="card-text">${{product.price}}</p>
             </div>
           </div>
@@ -102,7 +110,7 @@
         </div>
         <div class="carousel-item justify-content-between gap-4">
           @for(product of getFeaturedProducts.slice(8, 12); track product.id) {
-          <div class="card">
+          <div class="card shadow">
             <!-- Badge -->
             @switch (product.availabilityStatus) {
             @case ('In Stock') {
@@ -125,7 +133,7 @@
             }
             }
             <img [src]="product.images[0]" class="card-img-top" [alt]="product.title.toLowerCase()">
-            <div class="card-options">
+            <div class="card-options w-100 h-75">
               <ul class="list-inline link-offset-1-hover icons">
                 <li class="first"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="#"><i class="fa-regular fa-heart"></i></a></li>
@@ -135,11 +143,17 @@
                 [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">View
                 Details</a>
             </div>
-            <div class="card-body">
+            <div class="card-body justify-content-between gap-2">
               <a [routerLink]="['/product-details', product.id, product.title.toLowerCase()]">
                 <h6>{{product.title}}</h6>
               </a>
-              <hr>
+
+              <div class="line d-flex flex-row justify-content-center gap-2">
+                <span id="one"></span>
+                <span id="two"></span>
+                <span id="three"></span>
+              </div>
+
               <p class="card-text">${{product.price}}</p>
             </div>
           </div>

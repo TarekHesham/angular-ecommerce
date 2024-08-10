@@ -18,6 +18,8 @@ body {
   --bg-color-sucsess-button: #28b75f;
   --bg-color-white-off: #f7f7f7;
   --bg-color-prymary: #f9f8fe;
+  --bg-color-off-white: #f6f7fb;
+  --bg-colot-off-white-hover: #ebf4f3;
 
   --text-color-sub: #8a8fb9;
   --text-sub-dark: #9da0ae;
@@ -25,6 +27,8 @@ body {
   --text-prymary: #151875;
   --text-dark: #1d1d1d;
   --text-prymary-dark: #0d134e;
+  --text-prymary-light: #2f1ac4;
+  --text-gray-light: #9096b2;
 
   --bg-shade: #eeeffb;
   --bg-color-sub: #e7e4f8;
@@ -53,4 +57,12 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg-color-scound);
+}
+
+.toggleForm {
+  transform: rotateY(90deg);
+}
+.scaleForm {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
