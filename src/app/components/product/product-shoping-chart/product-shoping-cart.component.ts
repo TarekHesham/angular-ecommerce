@@ -20,7 +20,7 @@ export class ProductShopingCartComponent {
 
   ngOnInit() {
     const productInCart = this.cart.getFromCart(this.product.id);
-    if (productInCart) this.product.stock -= productInCart.count;
+    if (productInCart) this.product.stock -= productInCart.quantity;
   }
 
   handleCount(add: boolean) {
@@ -30,11 +30,11 @@ export class ProductShopingCartComponent {
     else if (!add && +ele.value > 0) ele.value--;
   }
 
-  handleCart(product: Product, count: string) {
+  handleCart(product: Product, quantity: string) {
     try {
-      const addedToCart = this.cart.setToCart(product, +count);
+      const addedToCart = this.cart.setToCart(product, +quantity);
       if (addedToCart) {
-        this.product.stock -= +count;
+        this.product.stock -= +quantity;
         this.countProduct.nativeElement.value = '0';
       }
     } catch (err) {

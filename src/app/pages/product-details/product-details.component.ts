@@ -5,7 +5,7 @@ import { RelatedProductsComponent } from '../../components/product/related-produ
 import { ProductShopingCartComponent } from '../../components/product/product-shoping-chart/product-shoping-cart.component';
 import { HeroComponent } from '../../components/global/hero/hero.component';
 import { Product } from '../../types/product';
-import { Subject, Subscription, switchMap, takeUntil } from 'rxjs';
+import { Subject, switchMap, takeUntil } from 'rxjs';
 import { ApiProductsService } from '../../services/api-products.service';
 
 @Component({

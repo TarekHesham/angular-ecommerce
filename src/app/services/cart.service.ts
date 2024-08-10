@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor() {}
+  private cartProductsCount = new BehaviorSubject<number>(0);
+  cartProductsCount$ = this.cartProductsCount.asObservable();
+
+  constructor() {
+    this.cartProductsCount.next(this.getCart.length);
+  }
 
   get getCart() {
     const cartData: string | any = localStorage.getItem('cart');
@@ -18,24 +24,25 @@ export class CartService {
     }
   }
 
-  setToCart(product: any, count: number) {
+  setToCart(product: any, quantity: number) {
     try {
       const cartData = this.getCart;
       const productInCart = cartData.find((pro: any) => pro.id == product.id);
 
       if (productInCart) {
-        productInCart.count += count;
-        if (productInCart.count > productInCart.stock) {
-          throw new Error(`Count greater than stock`);
+        productInCart.quantity += quantity;
+        if (productInCart.quantity > productInCart.stock) {
+          throw new Error(`Qount greater than stock`);
         }
       } else {
-        if (count > product.stock) {
-          throw new Error(`Count greater than stock`);
+        if (quantity > product.stock) {
+          throw new Error(`Quantity greater than stock`);
         }
-        product.count = count;
+        product.quantity = quantity;
         cartData.push(product);
       }
       localStorage.setItem('cart', JSON.stringify(cartData));
+      this.cartProductsCount.next(cartData.length);
       return true;
     } catch (err) {
       return console.error(err);

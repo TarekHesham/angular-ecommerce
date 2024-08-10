@@ -6,3 +6,6 @@ header {
 ul {
   width: 33%;
 }
+.fa-cart-shopping span {
+  font-size: 8px;
+}

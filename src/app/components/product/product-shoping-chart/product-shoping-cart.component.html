@@ -43,8 +43,8 @@
           <button type="button" class="btn" (click)="handleCount(true)" [disabled]="+count.value >= product.stock"><i
               class="fa-solid fa-circle-plus"></i></button>
         </div>
-        <button (click)="handleCart(product, count.value)"
-          class="btn rounded-1 addCart {{product.stock == 0 || +count.value == 0 ? 'disabled' : ''}}">
+        <button (click)="handleCart(product, count.value)" class="btn rounded-1 addCart"
+          [disabled]="product.stock == 0 || +count.value == 0">
           Add To Cart
           <i class="fa-regular fa-heart"></i>
         </button>
