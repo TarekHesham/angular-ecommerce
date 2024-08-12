@@ -1,0 +1,21 @@
+<section class="totals">
+  <span>Cart Totals</span>
+  <div class="square">
+    <div class="d-flex flex-row flex-nowrap justify-content-between w-75">
+      <span>Subtotals:</span> <span>${{(Subtotals).toFixed(2)}}</span>
+    </div>
+    <hr class="w-75 m-2">
+    <div class="d-flex flex-row flex-nowrap justify-content-between  w-75">
+      <span>Tax:</span> <span>14%</span>
+    </div>
+    <hr class="w-75 m-2">
+    <div class="d-flex flex-row flex-nowrap justify-content-between  w-75">
+      <span>Totals:</span> <span>${{(Subtotals + (Subtotals * 0.14)).toFixed(2)}}</span>
+    </div>
+    <hr class="w-75 m-2">
+    <span class="shipping"><i class="fa-solid fa-money-bill-wave"></i> Shipping & taxes calculated at
+      checkout</span>
+
+    <button [disabled]="paymentPage" (click)="redirectPayment()">Proceed To Checkout</button>
+  </div>
+</section>

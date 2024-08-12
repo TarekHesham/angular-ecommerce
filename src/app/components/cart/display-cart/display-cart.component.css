@@ -1,0 +1,36 @@
+.controles {
+  button {
+    background-color: var(--bg-color-button);
+    color: white;
+    border: 0;
+    padding: 6px 12px;
+  }
+  button:hover {
+    filter: contrast(0.9);
+  }
+}
+table img {
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.fa-circle-xmark {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  color: var(--bg-color-button);
+  cursor: pointer;
+}
+.quantityCounter {
+  border: 0;
+}
+.quantityCounter:not(:disabled) {
+  background-color: transparent;
+  color: var(--bg-color-button);
+}
+th,
+td:not(:has(button)) {
+  color: var(--text-prymary-second);
+  padding: 0 !important;
+}

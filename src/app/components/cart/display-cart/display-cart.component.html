@@ -1,0 +1,47 @@
+<section class="d-flex flex-column flex-lg-row gap-4 align-items-center">
+  @if(dataInCart.length > 0) {
+  <section class="col-10 col-lg-8">
+    <table class="table table-hover">
+      <thead>
+        <th class="table-primary" colspan="2">Product</th>
+        <th class="table-primary">Price</th>
+        <th class="table-primary">Quantity</th>
+        <th class="table-primary">Total</th>
+      </thead>
+      <tbody>
+        @for (product of dataInCart; track $index) {
+        <tr>
+          <td colspan="2" class="position-relative">
+            <img [src]="product.images[0]" [alt]="product.title">
+            <span>{{product.title}}</span>
+            <i class="fa-regular fa-circle-xmark" [hidden]="editCart" (click)="deleteFromCart(product.id)"></i>
+          </td>
+          <td>
+            {{product.price | priceAfterOffer: product.discountPercentage}}$
+          </td>
+          <td>
+            <button class="quantityCounter" [disabled]="editCart" (click)="productQuantity(product.id, false)"><i
+                class="fa-regular fa-square-minus"></i></button>
+
+            <span #quantity>{{product.quantity}}</span>
+
+            <button class="quantityCounter" [disabled]="editCart" (click)="productQuantity(product.id, true)"><i
+                class="fa-solid fa-square-plus"></i></button>
+          </td>
+          <td>
+            {{calcPrice(product.price, product.discountPercentage, product.quantity)}}$
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    <div class="controles d-flex justify-content-between mt-4">
+      <button (click)="toggleEditCart()">Update Cart</button>
+      <button (click)="clearCart()">Clear Cart</button>
+    </div>
+  </section>
+  <app-totals class="col-4" [Subtotals]="Subtotals" [paymentPage]="!editCart"></app-totals>
+  } @else {
+  <h2 class="w-100 text-center">Shoping Cart Is Empty</h2>
+  }
+</section>

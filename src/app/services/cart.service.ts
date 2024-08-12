@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Product } from '../types/product';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,7 @@ export class CartService {
     }
   }
 
-  setToCart(product: any, quantity: number) {
+  setToCart(product: Product, quantity: number) {
     try {
       const cartData = this.getCart;
       const productInCart = cartData.find((pro: any) => pro.id == product.id);
@@ -47,5 +48,45 @@ export class CartService {
     } catch (err) {
       return console.error(err);
     }
+  }
+
+  productQuantity(id: number, quantity: number) {
+    try {
+      const cartData = this.getCart;
+      const productInCart = cartData.find((pro: any) => pro.id == id);
+
+      if (!productInCart) throw new Error('Cant find product');
+      productInCart.quantity = quantity;
+
+      localStorage.setItem('cart', JSON.stringify(cartData));
+
+      return true;
+    } catch (err) {
+      return console.error(err);
+    }
+  }
+  deleteFromCart(ID: number) {
+    try {
+      const cartData = this.getCart;
+
+      // Get product from cart
+      const productInCart = cartData.find((pro: any) => pro.id == ID);
+      if (!productInCart) throw new Error(`Can't Found This Product`);
+
+      // Delete item from cart
+      cartData.splice(cartData.indexOf(productInCart), 1);
+      localStorage.setItem('cart', JSON.stringify(cartData));
+
+      // update count on cart icon
+      this.cartProductsCount.next(cartData.length);
+      return true;
+    } catch (err) {
+      return console.error(err);
+    }
+  }
+
+  clearCart() {
+    localStorage.setItem('cart', JSON.stringify([]));
+    this.cartProductsCount.next(0);
   }
 }

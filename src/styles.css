@@ -13,9 +13,11 @@ body {
 }
 :root {
   --bg-color-first: #eeeffb;
+  --bg-color-light-gray: #f4f4fc;
   --bg-color-scound: #7e33e0;
   --bg-color-button: #fb2e86;
   --bg-color-sucsess-button: #28b75f;
+  --bg-color-sucsess-light: #19d16f;
   --bg-color-white-off: #f7f7f7;
   --bg-color-prymary: #f9f8fe;
   --bg-color-off-white: #f6f7fb;
@@ -24,11 +26,13 @@ body {
   --text-color-sub: #8a8fb9;
   --text-sub-dark: #9da0ae;
   --text-icons: #535399;
-  --text-prymary: #151875;
   --text-dark: #1d1d1d;
+  --text-prymary: #151875;
   --text-prymary-dark: #0d134e;
   --text-prymary-light: #2f1ac4;
+  --text-prymary-second: #1d3178;
   --text-gray-light: #9096b2;
+  --text-gray-light-two: #8a91ab;
 
   --bg-shade: #eeeffb;
   --bg-color-sub: #e7e4f8;
@@ -65,4 +69,8 @@ body {
 .scaleForm {
   transition: transform 0.5s;
   transform-style: preserve-3d;
+}
+
+.hidden {
+  display: none;
 }

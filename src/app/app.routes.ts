@@ -4,13 +4,18 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { SearchComponent } from './pages/search/search.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ShopingCartComponent } from './pages/shoping-cart/shoping-cart.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
-// pages
-// components
-// pipes
-// services
-// types
-// guards
+/**
+ *
+ * pages [Home, Login, NotFound, PDetails, search, shopingCart]
+ * components [Global, Home, Login, Product, search]
+ * pipes [PriceOffer]
+ * services [API, Cart]
+ * types [Product]
+ * guards [None]
+ */
 
 export const routes: Routes = [
   {
@@ -33,6 +38,16 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     title: 'TarekBaba | Login',
+  },
+  {
+    path: 'cart',
+    component: ShopingCartComponent,
+    title: 'TarekBaba | Shoping Cart',
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    title: 'Tarek Baba | Payment page',
   },
   {
     path: '**',

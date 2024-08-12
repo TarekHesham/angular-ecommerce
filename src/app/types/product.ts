@@ -4,6 +4,7 @@ interface Meta {
   barcode: string;
   qrCode: string;
 }
+
 interface Review {
   rating: number;
   comment: string;
@@ -11,6 +12,7 @@ interface Review {
   reviewerName: string;
   reviewerEmail: string;
 }
+
 export interface Product {
   id: number;
   title: string;
@@ -20,6 +22,7 @@ export interface Product {
   discountPercentage: number;
   rating: number;
   stock: number;
+  quantity?: any;
   tags: string[];
   brand?: string;
   sku: string;

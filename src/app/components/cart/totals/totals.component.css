@@ -1,0 +1,43 @@
+.square {
+  background-color: var(--bg-color-light-gray);
+  width: 300px;
+  padding-block: 25px;
+  align-content: center;
+  text-align: -webkit-center;
+
+  button {
+    background-color: var(--bg-color-sucsess-light);
+    border: 0;
+    padding: 8px 12px;
+    width: 80%;
+    color: white;
+    border-radius: 3px;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  button:disabled {
+    filter: brightness(0.8);
+    cursor: not-allowed;
+  }
+}
+
+.totals {
+  color: var(--text-prymary-second);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.shipping {
+  font-size: 11px;
+  color: var(--text-gray-light-two);
+
+  i {
+    color: var(--bg-color-sucsess-light);
+  }
+}
