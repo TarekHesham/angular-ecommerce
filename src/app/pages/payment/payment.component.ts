@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from '../../components/global/hero/hero.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -8,4 +9,12 @@ import { HeroComponent } from '../../components/global/hero/hero.component';
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css',
 })
-export class PaymentComponent {}
+export class PaymentComponent {
+  orderCompleted: boolean = true;
+
+  constructor(private router: Router) {}
+
+  redirectShopping() {
+    this.router.navigate(['/']);
+  }
+}

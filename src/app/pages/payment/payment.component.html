@@ -1,1 +1,13 @@
-<app-hero [titlePage]="'Payment page'"></app-hero>
+<app-hero [titlePage]="orderCompleted ? 'Order Completed' : 'Payment page'"></app-hero>
+@if(orderCompleted) {
+<section class="container done d-flex align-items-center text-center flex-column gap-3">
+  <img src="/done.png" alt="done">
+
+  <h2>Your Order Is Completed!</h2>
+  <p class="w-75">Thank you for your order! Your order is being processed and will be completed within 3-6
+    hours. You will receive an email confirmation when your order is completed.</p>
+  <button (click)="redirectShopping()" class="btn btn-success">Continue Shopping</button>
+</section>
+}@else {
+<!-- Contenue Code :) -->
+}

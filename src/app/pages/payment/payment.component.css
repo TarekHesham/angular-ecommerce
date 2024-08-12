@@ -1,0 +1,28 @@
+.done {
+  background-image: url("/doneShopping.png");
+  height: 500px;
+  width: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-block: 50px;
+  padding-block: 60px;
+
+  p {
+    color: var(--text-gray-light-three);
+  }
+  h2 {
+    color: var(--text-prymary);
+  }
+
+  img {
+    width: 80px;
+  }
+
+  button {
+    background-color: var(--bg-color-button);
+    border: 0;
+    border-radius: 3px;
+    padding: 12px 30px;
+  }
+}
