@@ -1,6 +1,14 @@
-# ecommerceApp
+<p align="center">
+  <a href="https://iti.gov.eg/" target="_blank" rel="noopener noreferrer">
+    <img width="150" src="https://shamra-academia.com/uploads/publishers/logoc1ee0a1961b28b92869f371af51313da.png" alt="ITI Logo">
+  </a>
+</p>
+
+# Ecommerce App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+
+### [**Live Demo**](https://angular-ecommerce-psi.vercel.app/)
 
 ## Development server
 
