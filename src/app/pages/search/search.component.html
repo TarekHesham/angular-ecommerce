@@ -1,5 +1,5 @@
 <app-hero [titlePage]="'Search In Products'"></app-hero>
-@if (searchResualts.length === 0) {
+@if (!searchResualts) {
 <section class="w-75  mx-auto p-5 m-2 rounded-2 text-center">
   <div class="alert alert-danger d-flex align-items-center" role="alert">
     <i class="fa-solid fa-triangle-exclamation me-3"></i>

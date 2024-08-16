@@ -1,0 +1,18 @@
+<section class="container mx-auto text-center">
+  <h2>Latest Products</h2>
+  <ul class="list-inline">
+    <li class="list-inline-item px-2" [class.selected]="selected == newArr.id" id="newArr"
+      (click)="handlerSelect(newArr)" #newArr>New Arrival</li>
+    <li class="list-inline-item px-2" [class.selected]="selected == best.id" id="bestProducts"
+      (click)="handlerSelect(best)" #best>Best Sellar</li>
+    <li class="list-inline-item px-2" [class.selected]="selected == featured.id" id="featuredProducts"
+      (click)="handlerSelect(featured)" #featured>Featured</li>
+    <li class="list-inline-item px-2" [class.selected]="selected == special.id" id="specialProducts"
+      (click)="handlerSelect(special)" #special>Special Offer</li>
+  </ul>
+  <main class="d-flex flex-column justify-content-evenly flex-lg-row flex-wrap justify-content-xl-between">
+    @for (product of selectedProducts; track product.id) {
+    <app-leatest-cards [productDetails]="product"></app-leatest-cards>
+    }
+  </main>
+</section>

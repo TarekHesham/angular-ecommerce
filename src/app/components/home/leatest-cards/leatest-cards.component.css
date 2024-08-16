@@ -1,0 +1,47 @@
+.latestCard img {
+  background-color: var(--bg-shade);
+  width: 360px;
+  height: 270px;
+  padding: 1.5rem;
+}
+.latestCard h6 {
+  border-bottom: 2px solid var(--bg-shade);
+}
+.latestCard {
+  width: max-content;
+  cursor: pointer;
+}
+
+.card-img {
+  position: relative;
+}
+.list-unstyled {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+
+  i {
+    color: var(--text-prymary-light);
+  }
+}
+.latestCard:hover {
+  img {
+    background-color: white;
+  }
+
+  .list-unstyled {
+    display: block !important;
+    text-align: center;
+  }
+  .list-unstyled :first-child i {
+    background-color: var(--bg-shade);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-content: center;
+  }
+  .list-unstyled i {
+    margin-block: 5px;
+    cursor: pointer;
+  }
+}

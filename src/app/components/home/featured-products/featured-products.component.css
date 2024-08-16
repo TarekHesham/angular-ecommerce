@@ -130,3 +130,10 @@ a {
 #three {
   background-color: #8568ff;
 }
+section {
+  padding-bottom: 2% !important;
+}
+h2 {
+  color: var(--text-prymary-three);
+  font-size: 2rem;
+}

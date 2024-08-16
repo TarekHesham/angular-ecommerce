@@ -1,0 +1,14 @@
+li {
+  cursor: pointer;
+}
+.selected {
+  color: var(--bg-color-button) !important;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+section {
+  color: var(--text-prymary);
+}
+h2 {
+  font-size: 2rem;
+}

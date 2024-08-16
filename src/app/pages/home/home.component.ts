@@ -1,3 +1,4 @@
+import { LeatestProductsComponent } from './../../components/home/leatest-products/leatest-products.component';
 import { ApiProductsService } from './../../services/api-products.service';
 import { Component } from '@angular/core';
 import { HeroComponent } from '../../components/home/hero/hero.component';
@@ -8,7 +9,7 @@ import { Product } from '../../types/product';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeroComponent, FeaturedProductsComponent],
+  imports: [HeroComponent, FeaturedProductsComponent, LeatestProductsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
