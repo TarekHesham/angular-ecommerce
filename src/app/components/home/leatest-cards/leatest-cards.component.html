@@ -1,6 +1,7 @@
 <div class="latestCard py-4 mx-auto" [routerLink]="['/product-details', productDetails.id, productDetails.title]">
   <div class="card-img">
     <img [src]="productDetails.images[0]" [alt]="productDetails.title">
+    <span class="badge">Sale</span>
     <ul class="list-unstyled d-none">
       <li><i class="fa-solid fa-cart-shopping"></i></li>
       <li><i class="fa-regular fa-heart"></i></li>

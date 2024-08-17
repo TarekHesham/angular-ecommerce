@@ -22,11 +22,13 @@ body {
   --bg-color-prymary: #f9f8fe;
   --bg-color-off-white: #f6f7fb;
   --bg-colot-off-white-hover: #ebf4f3;
+  --bg-color-badge: #3f509e;
 
   --text-color-sub: #8a8fb9;
   --text-sub-dark: #9da0ae;
   --text-icons: #535399;
   --text-dark: #1d1d1d;
+
   --text-prymary: #151875;
   --text-prymary-dark: #0d134e;
   --text-prymary-light: #2f1ac4;

@@ -1,6 +1,6 @@
 .latestCard img {
   background-color: var(--bg-shade);
-  width: 360px;
+  width: 335px;
   height: 270px;
   padding: 1.5rem;
 }
@@ -44,4 +44,21 @@
     margin-block: 5px;
     cursor: pointer;
   }
+  .badge {
+    display: block;
+  }
+}
+.badge {
+  position: absolute;
+  top: 22px;
+  left: -5px;
+  width: 100px;
+  height: 25px;
+  color: white;
+  background-color: var(--bg-color-badge);
+  align-content: center;
+  border-radius: 15px 5px 15px 1px;
+  rotate: 330deg;
+  font-size: 14px;
+  display: none;
 }

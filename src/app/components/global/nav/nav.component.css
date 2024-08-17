@@ -7,12 +7,18 @@ nav {
 .active-link {
   color: #fb2e86 !important;
 }
-.search {
-  width: 30%;
-}
 .btn {
   background-color: var(--bg-color-button);
 }
 .btn i {
   color: white;
+}
+.searchBar {
+  width: 30%;
+}
+
+@media only screen and (max-width: 1199px) {
+  .searchBar {
+    width: 100%;
+  }
 }
