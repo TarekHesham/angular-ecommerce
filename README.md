@@ -10,6 +10,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### [**Live Demo**](https://angular-ecommerce-psi.vercel.app/)
 
+## Screenshots
+
+<div align="center">
+
+![Mockup](./demo/Mockup.jpg)
+![HomePage](./demo/HomePage.png)
+![ProductDetails](./demo/ProductDetails.png)
+![ShopingCart](./demo/ShopingCart.png)
+![OrderComplete](./demo/OrderComplete.png)
+![LoginPage](./demo/Login.png)
+![RegisterPage](./demo/Register.png)
+![Search Grid View](./demo/SearchGrid.png)
+![Search List View](./demo/SearchList.png)
+![NotFound](./demo/NotFound.png)
+
+</div>
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
