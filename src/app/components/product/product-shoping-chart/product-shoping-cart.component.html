@@ -1,3 +1,4 @@
+<!-- Card -->
 <div class="card mx-auto w-75 shoping-chart shadow-lg border-0">
   <div class="d-flex flex-column flex-md-row g-0 h-100">
     <div class="align-self-center d-flex flex-column flex-xl-row align-items-center col-6">
@@ -10,6 +11,7 @@
     </div>
     <div>
       <div class="card-body my-auto mt-5">
+        <!-- Title -->
         <h5 class="card-title">{{product.title}}
           @if (product.stock > 10) {
           <span class="badge text-bg-success">In Stock</span>
@@ -43,8 +45,9 @@
           <button type="button" class="btn" (click)="handleCount(true)" [disabled]="+count.value >= product.stock"><i
               class="fa-solid fa-circle-plus"></i></button>
         </div>
-        <button (click)="handleCart(product, count.value)" class="btn rounded-1 addCart"
-          [disabled]="product.stock == 0 || +count.value == 0">
+        <button (click)="handleCart(product, count.value, priceOffcanvas)" class="btn rounded-1 addCart"
+          [disabled]="product.stock == 0 || +count.value == 0" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
           Add To Cart
           <i class="fa-regular fa-heart"></i>
         </button>
@@ -60,6 +63,35 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel">
+
+  <div class="offcanvas-header flex-column">
+    <!-- Image -->
+    <img [src]="product.images[0]" [alt]="product.title" width="300px" height="250px">
+    <!-- Title -->
+    <div class="title">
+      <h5 class="offcanvas-title d-block" id="offcanvasWithBothOptionsLabel">{{product.title}}</h5>
+      <span class="d-flex align-items-center gap-1 justify-content-center">Added to cart
+        <img src="https://f.nooncdn.com/s/app/com/noon/icons/checkbox_checked.svg" alt="icon" height="17">
+      </span>
+    </div>
+  </div>
+
+  <div class="offcanvas-body">
+    <div class="d-flex justify-content-between">
+      <span>Cart Total</span>
+      <span class="price" #priceOffcanvas>0</span>
+    </div>
+    <div class="buttons d-flex justify-content-between gap-2 mt-2">
+      <button class="btn text-white" [routerLink]="['/cart']">CHECKOUT</button>
+      <button type="button" class="btn text-primary" data-bs-dismiss="offcanvas" aria-label="Close">Continue
+        Shopping</button>
     </div>
   </div>
 </div>

@@ -30,13 +30,16 @@ export class ProductShopingCartComponent {
     else if (!add && +ele.value > 0) ele.value--;
   }
 
-  handleCart(product: Product, quantity: string) {
+  handleCart(product: Product, quantity: string, priceOffcanvas: Element) {
     try {
       const addedToCart = this.cart.setToCart(product, +quantity);
       if (addedToCart) {
         this.product.stock -= +quantity;
         this.countProduct.nativeElement.value = '0';
       }
+      const cartItem = this.cart.getFromCart(product.id);
+      priceOffcanvas.textContent =
+        'USD ' + (cartItem.quantity * cartItem.price).toFixed(2);
     } catch (err) {
       console.error(`FROM Product shoping cart [ts] file...`);
     }

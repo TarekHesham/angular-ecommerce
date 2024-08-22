@@ -77,3 +77,29 @@ small {
 .countAdd input {
   border-color: #eeeffb;
 }
+
+.offcanvas-header .title {
+  font-family: system-ui;
+  font-weight: 300;
+}
+.offcanvas-body button {
+  font-family: system-ui;
+  box-shadow: rgba(0, 0, 0, 0.11) 0px 1px 1px 0px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  transition: opacity 0.25s ease-in-out;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  border: 1px solid rgb(226, 229, 241);
+  border-radius: 4px;
+  flex: 1 1 0%;
+}
+.offcanvas-body button:first-of-type {
+  background-color: rgb(56, 102, 223);
+}
+.offcanvas-header {
+  margin-top: 25%;
+}
