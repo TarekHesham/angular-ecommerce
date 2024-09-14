@@ -21,28 +21,28 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'TarekBaba | Home Page',
+    title: 'Ecommerce | Home Page',
   },
   {
     path: 'product-details/:id/:title',
     component: ProductDetailsComponent,
-    title: 'TarekBaba | Product Details',
+    title: 'Ecommerce | Product Details',
   },
   {
     path: 'search',
     component: SearchComponent,
-    title: 'TarekBaba | Search In Products',
+    title: 'Ecommerce | Search In Products',
     pathMatch: 'full',
   },
   {
     path: 'login',
     component: LoginComponent,
-    title: 'TarekBaba | Login',
+    title: 'Ecommerce | Login',
   },
   {
     path: 'cart',
     component: ShopingCartComponent,
-    title: 'TarekBaba | Shoping Cart',
+    title: 'Ecommerce | Shoping Cart',
   },
   {
     path: 'payment',
@@ -52,6 +52,6 @@ export const routes: Routes = [
   {
     path: '**',
     component: NotFoundComponent,
-    title: 'TarekBaba | 404 NOT FOUND',
+    title: 'Ecommerce | 404 NOT FOUND',
   },
 ];
